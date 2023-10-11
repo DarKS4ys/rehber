@@ -15,12 +15,13 @@ export default function ThreeDTest() {
   }, []);
 
   return (
-    <div className='w-fit h-fit items-center justify-center'>
+    <div className='w-5/6 h-5/6 md:w-full md:h-full flex items-center justify-center'>
       {isLoaded ? (
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
+          className="w-full h-full" // Make Spline element fill the parent container
         >
           <Spline scene="https://prod.spline.design/uaQTXr9Ba8jMeA0E/scene.splinecode" />
         </motion.div>
