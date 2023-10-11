@@ -1,8 +1,6 @@
 "use client"
 import React, { useRef } from 'react'
-import ImageBlob from './ImageBlob'
 import HeaderText from './HeaderText'
-import ThreeDTest from './3DTest'
 import {motion} from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
 
@@ -21,9 +19,6 @@ export default function Header({page}: {page: any}) {
       <motion.div className='z-20 relative'
       style={{y: textY}}
       >
-        <div className='absolute bottom-32 md:bottom-40 left-0 w-full h-full justify-center flex z-10 drop-shadow-lg'>
-          <ThreeDTest/>
-        </div>
         <HeaderText page={page}/>
       </motion.div>
 
