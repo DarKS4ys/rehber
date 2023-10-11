@@ -7,7 +7,7 @@ import { Button } from './ui/button';
 import {VscCircleFilled} from 'react-icons/vsc'
 import {BiChevronDown} from 'react-icons/bi'
 
-export default function LangSwitch() {
+export default function LangSwitch({navbar}: {navbar:any}) {
     const router = useRouter();
     let { lang } = useParams();
 
@@ -16,7 +16,7 @@ export default function LangSwitch() {
     
     useEffect(() => {
         if(lang == "tr") {
-          setCurrentLang("Turkish");
+          setCurrentLang("Türkçe");
         } else if (lang == "en") {
           setCurrentLang("English")
         } else {
@@ -56,7 +56,7 @@ export default function LangSwitch() {
       <DropdownMenuContent align="end">
       <DropdownMenuItem key="en" onClick={() => changeLang("en")} >
           <p className='flex gap-2 items-center'>
-            English
+            {navbar.langswitcher.English}
             {currentLang == "English" ?
             <VscCircleFilled/>
             : null}
@@ -64,8 +64,8 @@ export default function LangSwitch() {
         </DropdownMenuItem>
         <DropdownMenuItem key="tr" onClick={() => changeLang("tr")} >
           <p className='flex gap-2 items-center text-popover-foreground'>
-            Turkish
-            {currentLang == "Turkish" ?
+          {navbar.langswitcher.Turkish}
+            {currentLang == "Türkçe" ?
             <VscCircleFilled/>
             : null}
           </p>

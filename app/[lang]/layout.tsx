@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from './providers'
 import Navbar from '@/components/Navbar'
+import { getDictionary } from '@/lib/dictionary'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,18 +17,20 @@ export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale}))
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode
   params: {lang: Locale}
 }) {
+
+  const {page} = await getDictionary(params.lang)
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body className={inter.className}>
         <Providers>
-        <Navbar/>
+        <Navbar navbar={page.navbar}/>
         {children}
         </Providers>
       </body>

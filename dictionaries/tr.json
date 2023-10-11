@@ -4,6 +4,19 @@
         "welcome": "Trabzon'a",
         "city": "Hoşgeldiniz!",
         "description": "Easily find & discover places to explore, eat, shop or stay"
+      },
+
+      "navbar": {
+        "switcher": {
+        "dark": "Karanlık",
+        "light": "Aydınlık",
+        "system": "Sistem"
+      },
+  
+      "langswitcher": {
+        "Turkish": "Türkçe",
+        "English": "İngilizce"
+      }
       }
     }
   }
