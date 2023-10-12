@@ -1,9 +1,7 @@
-import ThreeDTest from '@/components/3DTest'
-import Header from '@/components/Header'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 
-export default async function Home({
+export default async function Explore({
   params: {lang}
 }: {
   params: {lang: Locale}
@@ -11,7 +9,7 @@ export default async function Home({
 
   return (
     <main className='h-full max-w-[1000px] mx-auto'>
-        SEX
+      SEX
     </main>
   )
 }

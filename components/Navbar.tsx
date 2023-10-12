@@ -29,7 +29,7 @@ export default function Nav({navbar}: {navbar: any}) {
   
 
   return (
-    <header className='w-full sticky top-0 backdrop-blur-md bg-white dark:bg-neutral-900 bg-opacity-70 dark:shadow-none shadow-lg dark:border-border dark:border-b z-50'>
+    <header className='w-full sticky top-0 backdrop-blur-md bg-white dark:bg-neutral-950 bg-opacity-70 dark:shadow-none shadow-lg dark:border-border dark:border-b z-50'>
       <div className='md:max-w-[1000px] mx-auto'>
         <ul className='flex items-center justify-between px-8 py-4'>
           <li className="hidden md:flex ">
@@ -40,10 +40,10 @@ export default function Nav({navbar}: {navbar: any}) {
           <li className="md:flex gap-4 hidden">
           {NavItems.map((item)=> (
             <Link onClick={() => setActiveTab(item.label)} href={pathnameWithoutLanguage === item.href ? '/' : item.href} key={item.label} className={clsx(
-              'px-3 py-2 hover:bg-highlighthover rounded-xl transition duration-200 hover:text-zinc-200',
+              'px-3 py-2 hover:bg-highlighthover rounded-xl transition duration-200 hover:text-zinc-200 dark:hover:text-zinc-100',
               pathnameWithoutLanguage === item.href
               ? 'text-white bg-highlight'
-              : 'text-zinc-600 dark:text-muted-foreground'
+              : 'text-zinc-600 dark:text-zinc-400'
             )}>
               {item.label}
             </Link>

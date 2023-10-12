@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import Middle from '@/components/Middle'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 
@@ -13,6 +14,7 @@ export default async function Home({
   return (
     <main className='h-[400rem]'>
       <Header page={page}/>
+      <Middle page={page}/>
       {/* <ThreeDTest/> */}
     </main>
   )
