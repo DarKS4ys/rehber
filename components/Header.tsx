@@ -24,7 +24,7 @@ export default function Header({page}: {page: any}) {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "275%"]);
   const scaleTransform = useTransform(scrollYProgress, [0, 1], ["90%", "110%"]);
 
-  useEffect(()=> {
+/*   useEffect(()=> {
     const lenis = new Lenis()
     lenis.on('scroll', (e:any) => {
   
@@ -36,7 +36,7 @@ export default function Header({page}: {page: any}) {
     }
 
     requestAnimationFrame(raf)
-  }, [])
+  }, []) */
   
   return (
     <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
