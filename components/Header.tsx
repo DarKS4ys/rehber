@@ -1,10 +1,14 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import HeaderText from './HeaderText'
 import {motion} from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
 import ThreeDTest from './3DTest'
 import Image from 'next/image'
+import Lenis from '@studio-freight/lenis'
+import ParallaxFullImg from '../public/parallaxfull.jpg'
+import ParallaxBottomImg from '../public/parallax-bottom.png'
+import DefaultBlur from './static/DefaultBlur'
 
 export default function Header({page}: {page: any}) {
   const ref = useRef(null);
@@ -13,8 +17,21 @@ export default function Header({page}: {page: any}) {
     offset: ["start start", "end start"]
   })
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "270%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "275%"]);
 
+  useEffect(()=> {
+    const lenis = new Lenis()
+    lenis.on('scroll', (e:any) => {
+      console.log(e)
+    })
+
+    function raf(time:any) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
   
   return (
     <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-32 md:py-18 2xl:py-40 text-lg relative text-center p-4'>
@@ -34,14 +51,15 @@ export default function Header({page}: {page: any}) {
           }}
         >
           {/* Use next/image for background */}
-          <Image
+          <DefaultBlur src={ParallaxFullImg}/>
+{/*           <Image
             quality={95}
             src="/parallaxfull.jpg"
             alt="Background Image"
             layout="fill"
             objectFit="cover"
             objectPosition='bottom'
-          />
+          /> */}
         <div className="absolute inset-0 z-10 bottom-[5rem]">
           <div className="h-full w-full bg-gradient-to-b from-white via-transparent to-transparent"></div>
         </div>
@@ -75,13 +93,13 @@ export default function Header({page}: {page: any}) {
       >
         {/* Use next/image for background */}
         <Image
-          quality={95}
-          src="/parallaxfull-night.jpg"
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          objectPosition='bottom'
-        />
+            quality={95}
+            src="/parallaxfull-night.jpg"
+            alt="Background Image"
+            layout="fill"
+            objectFit="cover"
+            objectPosition='bottom'
+          />
         <div className="absolute inset-0 z-10 bottom-[5rem]">
           <div className="h-full w-full bg-gradient-to-b from-neutral-950 via-transparent to-transparent"></div>
         </div>
