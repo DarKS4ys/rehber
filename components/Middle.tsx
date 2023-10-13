@@ -56,13 +56,13 @@ export default function Middle({page}: {page: any}) {
   const textY = useTransform(scrollYProgress, [0, 1], [0, 1650]);
 
   return (
-    <section className='py-40 relative'>
+    <section className='py-60 relative'>
     <main className='h-[22%] relative  overflow-hidden'>
 {/*     <div className="absolute top-0 z-10 bottom-0 w-full h-[20rem]">
       <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
     </div> */}
       <div className="justify-center items-center flex flex-col">
-        <motion.div className="absolute z-10 pt-20" style={{ y: textY }}>
+        <motion.div className="absolute z-10 pt-20 p-4" style={{ y: textY }}>
             <MiddleText />
         </motion.div>
       </div>
