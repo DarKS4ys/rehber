@@ -33,8 +33,7 @@ const images = [
   eight,
   nine,
   ten,
-  eleven,
-  twelve
+  eleven
 ]
 
 export default function Middle({page}: {page: any}) {
