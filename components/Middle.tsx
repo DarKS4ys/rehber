@@ -17,7 +17,7 @@ export default function Middle({page}: {page: any}) {
   return (
     <motion.div
       ref={ref}
-      className="overflow-hidden py-40 h-screen w-full flex gap-4 justify-center text-center relative"
+      className="overflow-hidden py-40 h-[60rem] w-full flex gap-4 justify-center text-center relative"
     >
         <div className="relative">
             <motion.div className="z-10" style={{ y: textY }}>
