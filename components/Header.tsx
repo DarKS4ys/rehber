@@ -52,7 +52,7 @@ export default function Header({page}: {page: any}) {
         >
           {/* Use next/image for background */}
           <DefaultBlur src={ParallaxFullImg}/>
-{/*           <Image
+        {/*<Image
             quality={95}
             src="/parallaxfull.jpg"
             alt="Background Image"
@@ -70,7 +70,7 @@ export default function Header({page}: {page: any}) {
         {/* Use next/image for background */}
         <Image
           quality={95}
-          src="/parallax-bottom.png"
+          src={ParallaxBottomImg}
           alt="Background Image"
           layout="fill"
           objectFit="cover"
