@@ -7,7 +7,9 @@ import ThreeDTest from './3DTest'
 import Image from 'next/image'
 import Lenis from '@studio-freight/lenis'
 import ParallaxFullImg from '../public/parallaxfull.jpg'
+import ParallaxFullNightImg from '../public/parallaxfull-night.jpg'
 import ParallaxBottomImg from '../public/parallax-bottom.png'
+import ParallaxBottomNightImg from '../public/parallax-bottom-night.png'
 import DefaultBlur from './static/DefaultBlur'
 
 export default function Header({page}: {page: any}) {
@@ -17,7 +19,9 @@ export default function Header({page}: {page: any}) {
     offset: ["start start", "end start"]
   })
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.65, 0.85], ["100%", "0%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "275%"]);
+  const scaleTransform = useTransform(scrollYProgress, [0, 1], ["90%", "110%"]);
 
   useEffect(()=> {
     const lenis = new Lenis()
@@ -34,8 +38,8 @@ export default function Header({page}: {page: any}) {
   }, [])
   
   return (
-    <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-32 md:py-18 2xl:py-40 text-lg relative text-center p-4'>
-      <motion.div className='z-20 relative' style={{ y: textY }}>
+    <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-48 md:py-18 2xl:py-40 text-lg relative text-center p-4'>
+      <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: backgroundYFadeOpacity }}>
         <div className='absolute bottom-24 md:bottom-36 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
           <ThreeDTest />
         </div>
@@ -48,25 +52,22 @@ export default function Header({page}: {page: any}) {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: backgroundY,
+            opacity: backgroundYFadeOpacity,
           }}
         >
           {/* Use next/image for background */}
           <DefaultBlur src={ParallaxFullImg}/>
-        {/*<Image
-            quality={95}
-            src="/parallaxfull.jpg"
-            alt="Background Image"
-            layout="fill"
-            objectFit="cover"
-            objectPosition='bottom'
-          /> */}
         <div className="absolute inset-0 z-10 bottom-[5rem]">
           <div className="h-full w-full bg-gradient-to-b from-white via-transparent to-transparent"></div>
         </div>
         </motion.div>
 
 
-      <div className='absolute inset-0 z-30 dark:hidden'>
+      <motion.div className='absolute inset-0 z-30 dark:hidden'
+      style={{
+        opacity: backgroundYFadeOpacity,
+      }}
+      >
         {/* Use next/image for background */}
         <Image
           quality={95}
@@ -75,11 +76,12 @@ export default function Header({page}: {page: any}) {
           layout="fill"
           objectFit="cover"
           objectPosition='bottom'
+          placeholder='blur'
         />
-        <div className="absolute inset-0 z-10 top-[30rem]">
+        <div className="absolute inset-0 z-10 top-[28rem]">
           <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-white"></div>
         </div>
-      </div>
+      </motion.div>
 
 
         
@@ -89,34 +91,36 @@ export default function Header({page}: {page: any}) {
           backgroundPosition: "bottom",
           backgroundSize: "cover",
           y: backgroundY,
+          opacity: backgroundYFadeOpacity,
         }}
       >
         {/* Use next/image for background */}
-        <Image
-            quality={95}
-            src="/parallaxfull-night.jpg"
-            alt="Background Image"
-            layout="fill"
-            objectFit="cover"
-            objectPosition='bottom'
-          />
+        <DefaultBlur src={ParallaxFullNightImg}/>
         <div className="absolute inset-0 z-10 bottom-[5rem]">
           <div className="h-full w-full bg-gradient-to-b from-neutral-950 via-transparent to-transparent"></div>
         </div>
       </motion.div>
 
-      <div className='absolute inset-0 z-30 dark:flex hidden'>
+      <div className='absolute inset-0 z-30 dark:flex hidden'
+      >
+      <motion.div
+        style={{
+          opacity: backgroundYFadeOpacity,
+        }}
+      >
         {/* Use next/image for background */}
         <Image
           quality={95}
-          src="/parallax-bottom-night.png"
+          src={ParallaxBottomNightImg}
           alt="Background Image"
           layout="fill"
           objectFit="cover"
           objectPosition='bottom'
+          placeholder='blur'
         />
+        </motion.div>
         <div className="absolute inset-0 z-10 top-[30rem]">
-          <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-neutral-950"></div>
+          <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-background"></div>
         </div>
       </div>
     </div>
