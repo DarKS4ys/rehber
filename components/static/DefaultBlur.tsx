@@ -8,8 +8,7 @@ export default function DefaultBlur({src}: {src:any}) {
             alt='image'
             src={src}
             fill
-            objectFit="cover"
-            objectPosition='bottom'
+            className='object-cover object-bottom'
             placeholder='blur'
             />
         </div>
