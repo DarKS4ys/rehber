@@ -8,8 +8,8 @@ import Image from 'next/image'
 import Lenis from '@studio-freight/lenis'
 import ParallaxFullImg from '../public/parallaxfull.jpg'
 import ParallaxFullNightImg from '../public/parallaxfull-night.jpg'
-import ParallaxBottomImg from '../public/parallax-bottom.png'
-import ParallaxBottomNightImg from '../public/parallax-bottom-night.png'
+import ParallaxBottomImg from '../public/parallax-bottom.webp'
+import ParallaxBottomNightImg from '../public/parallax-bottom-night.webp'
 import DefaultBlur from './static/DefaultBlur'
 
 export default function Header({page}: {page: any}) {

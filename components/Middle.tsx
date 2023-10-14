@@ -4,6 +4,8 @@ import {motion} from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
 import MiddleText from './MiddleText'
 import Image from 'next/image'
+import useDimension from '@/lib/useDimension'
+
 import one from '../public/images/1.jpg'
 import two from '../public/images/2.jpg'
 import three from '../public/images/3.jpg'
@@ -11,12 +13,11 @@ import four from '../public/images/4.jpg'
 import five from '../public/images/5.jpg'
 import six from '../public/images/6.jpg'
 import seven from '../public/images/7.jpg'
-import eight from '../public/images/8.jpg'
+import eight from '../public/images/8.webp'
 import nine from '../public/images/9.jpg'
 import ten from '../public/images/10.jpg'
 import eleven from '../public/images/11.jpg'
 import twelve from '../public/images/12.jpg'
-import useDimension from '@/lib/useDimension'
 
 import styles from '@/components/styles/middle.module.css'
 
@@ -63,7 +64,7 @@ export default function Middle({page}: {page: any}) {
       </div>
       <div className="justify-center items-center flex flex-col">
         <motion.div className="absolute z-10 top-0 2xl:mt-20 md:p-0 p-4" style={{ y: textY, opacity: backgroundYFadeOpacity }}>
-            <MiddleText />
+            <MiddleText explore={page.landing.explore} />
         </motion.div>
       </div>
       <div className={styles.main}></div>
@@ -75,22 +76,6 @@ export default function Middle({page}: {page: any}) {
       </div>
     </main>
     </motion.section>
-/*     <motion.div
-      ref={ref}
-      className="overflow-hidden py-40 h-[50rem] w-full flex gap-4 justify-center text-center relative"
-    >
-        <div className="relative">
-            <motion.div className="z-10 pt-10" style={{ y: textY }}>
-                <MiddleText />
-            </motion.div>
-            <div className='-z-50 absolute top-0 left-[100%] items-center justify-center flex flex-col w-full'>
-              
-            </div>
-        </div>
-        <div className="absolute inset-0 z-20 bottom-0 pointer-events-none">
-            <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-white dark:to-background"></div>
-        </div>
-    </motion.div> */
   );
   }
 
@@ -110,6 +95,7 @@ export default function Middle({page}: {page: any}) {
               alt='image'
               className='object-cover hover:scale-110 transition duration-500'
               priority={false}
+              /* placeholder={blurDataUrl} */
               />
             </div>
           })

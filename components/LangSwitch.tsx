@@ -56,7 +56,7 @@ export default function LangSwitch({navbar}: {navbar:any}) {
       <DropdownMenuContent align="end">
       <DropdownMenuItem key="en" onClick={() => changeLang("en")} >
           <p className='flex gap-2 items-center'>
-            {navbar.langswitcher.English}
+            {navbar.langswitcher.english}
             {currentLang == "English" ?
             <VscCircleFilled/>
             : null}
@@ -64,7 +64,7 @@ export default function LangSwitch({navbar}: {navbar:any}) {
         </DropdownMenuItem>
         <DropdownMenuItem key="tr" onClick={() => changeLang("tr")} >
           <p className='flex gap-2 items-center text-popover-foreground'>
-          {navbar.langswitcher.Turkish}
+          {navbar.langswitcher.turkish}
             {currentLang == "Türkçe" ?
             <VscCircleFilled/>
             : null}

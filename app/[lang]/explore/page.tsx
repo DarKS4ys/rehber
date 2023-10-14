@@ -9,7 +9,7 @@ export default async function Explore({
 
   return (
     <main className='h-full max-w-[1000px] mx-auto'>
-      SEX
+      Test Page
     </main>
   )
 }

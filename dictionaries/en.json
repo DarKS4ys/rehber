@@ -13,8 +13,15 @@
       },
 
       "langswitcher": {
-        "Turkish": "Turkish",
-        "English": "English"
+        "turkish": "Turkish",
+        "english": "English"
+      }
+    },
+    "landing": {
+      "explore": {
+        "title": "Explore places now!",
+        "buttonLabel": "Explore",
+        "description": "description"
       }
     }
   }

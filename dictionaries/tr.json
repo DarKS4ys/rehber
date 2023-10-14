@@ -14,9 +14,16 @@
       },
   
       "langswitcher": {
-        "Turkish": "Türkçe",
-        "English": "İngilizce"
+        "turkish": "Türkçe",
+        "english": "İngilizce"
       }
+      },
+      "landing": {
+        "explore": {
+          "title": "Keşfetmeye hemen başla!",
+          "buttonLabel": "Keşfet",
+          "description": "açıklama"
+        }
       }
     }
   }
