@@ -21,6 +21,7 @@ export default function Header({page}: {page: any}) {
   
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.65, 0.85], ["100%", "0%"]);
+  const textYFadeOpacity = useTransform(scrollYProgress, [0.6, 0.7], ["100%", "0%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "275%"]);
   const scaleTransform = useTransform(scrollYProgress, [0, 1], ["90%", "110%"]);
 
@@ -40,7 +41,7 @@ export default function Header({page}: {page: any}) {
   
   return (
     <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
-      <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: backgroundYFadeOpacity }}>
+      <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: textYFadeOpacity }}>
         <div className='absolute bottom-24 md:bottom-36 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
           <ThreeDTest />
         </div>
