@@ -14,6 +14,7 @@ export default async function Home({
   return (
     <main className='h-[400rem]'>
       <Header page={page}/>
+      
       <Middle page={page}/>
       {/* <ThreeDTest/> */}
     </main>
