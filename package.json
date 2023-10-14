@@ -16,6 +16,7 @@
     "@studio-freight/lenis": "^1.0.27",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "firebase": "^10.5.0",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "negotiator": "^0.6.3",

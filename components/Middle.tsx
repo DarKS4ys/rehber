@@ -69,10 +69,10 @@ export default function Middle({page}: {page: any}) {
       </div>
       <div className={styles.main}></div>
       <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
-        <Column images={[images[0], images[1], images[2]]} y={y} opacity={backgroundYFadeOpacity} />
-        <Column images={[images[3], images[4], images[5]]} y={y2} opacity={backgroundYFadeOpacity}/>
-        <Column images={[images[6], images[7], images[8]]} y={y3} opacity={backgroundYFadeOpacity}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4} opacity={backgroundYFadeOpacity}/>
+        <Column images={[images[0], images[1], images[2]]} y={1} opacity={backgroundYFadeOpacity} />
+        <Column images={[images[3], images[4], images[5]]} y={1} opacity={backgroundYFadeOpacity}/>
+        <Column images={[images[6], images[7], images[8]]} y={1} opacity={backgroundYFadeOpacity}/>
+        <Column images={[images[9], images[10], images[11]]} y={1} opacity={backgroundYFadeOpacity}/>
       </div>
     </main>
     </motion.section>
