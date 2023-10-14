@@ -53,7 +53,7 @@ export default function Middle({page}: {page: any}) {
   
   const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.85, 1], ["100%", "0%"]);
   const backgroundYFadeOpacityIn = useTransform(scrollYProgress, [0, 0.15], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 1650]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, height * 1.65]);
 
   return (
     <motion.section className='py-60 relative' style={{opacity: backgroundYFadeOpacityIn}}>
