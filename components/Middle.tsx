@@ -63,7 +63,7 @@ export default function Middle({page}: {page: any}) {
         <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
       </div>
       <div className="justify-center items-center flex flex-col">
-        <motion.div className="absolute z-10 top-0 2xl:mt-20 md:p-0 p-4" style={{ y: y, opacity: backgroundYFadeOpacity }}>
+        <motion.div className="absolute z-10 top-0 md:p-0 p-4" style={{ y: textY, opacity: backgroundYFadeOpacity }}>
             <MiddleText explore={page.landing.explore} />
         </motion.div>
       </div>
