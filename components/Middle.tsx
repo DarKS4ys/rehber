@@ -1,10 +1,8 @@
 "use client"
 import React, { useRef } from 'react'
-import HeaderText from './HeaderText'
 import {motion} from 'framer-motion'
 import { useScroll, useTransform } from 'framer-motion'
 import MiddleText from './MiddleText'
-import ImageBlob from './ImageBlob'
 import Image from 'next/image'
 import one from '../public/images/1.jpg'
 import two from '../public/images/2.jpg'
@@ -33,7 +31,8 @@ const images = [
   eight,
   nine,
   ten,
-  eleven
+  eleven,
+  twelve,
 ]
 
 export default function Middle({page}: {page: any}) {
@@ -52,28 +51,30 @@ export default function Middle({page}: {page: any}) {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.9])
   
+  const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.85, 1], ["100%", "0%"]);
+  const backgroundYFadeOpacityIn = useTransform(scrollYProgress, [0, 0.15], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 1650]);
 
   return (
-    <section className='py-60 relative'>
-    <main className='h-[22%] relative  overflow-hidden'>
-{/*     <div className="absolute top-0 z-10 bottom-0 w-full h-[20rem]">
-      <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
-    </div> */}
+    <motion.section className='py-60 relative' style={{opacity: backgroundYFadeOpacityIn}}>
+    <main className='h-[22%] relative overflow-hidden'>
+    <div className="absolute z-10 -top-28 w-full h-[40rem]">
+        <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
+      </div>
       <div className="justify-center items-center flex flex-col">
-        <motion.div className="absolute z-10 pt-20 p-4" style={{ y: textY }}>
+        <motion.div className="absolute z-10 top-0 2xl:mt-20 md:p-0 p-4" style={{ y: textY, opacity: backgroundYFadeOpacity }}>
             <MiddleText />
         </motion.div>
       </div>
       <div className={styles.main}></div>
       <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
-        <Column images={[images[0], images[1], images[2]]} y={y} />
-        <Column images={[images[3], images[4], images[5]]} y={y2}/>
-        <Column images={[images[6], images[7], images[8]]} y={y3}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4}/>
+        <Column images={[images[0], images[1], images[2]]} y={y} opacity={backgroundYFadeOpacity} />
+        <Column images={[images[3], images[4], images[5]]} y={y2} opacity={backgroundYFadeOpacity}/>
+        <Column images={[images[6], images[7], images[8]]} y={y3} opacity={backgroundYFadeOpacity}/>
+        <Column images={[images[9], images[10], images[11]]} y={y4} opacity={backgroundYFadeOpacity}/>
       </div>
     </main>
-    </section>
+    </motion.section>
 /*     <motion.div
       ref={ref}
       className="overflow-hidden py-40 h-[50rem] w-full flex gap-4 justify-center text-center relative"
@@ -93,9 +94,13 @@ export default function Middle({page}: {page: any}) {
   );
   }
 
-  const Column = ({images, y=0}: {images:any, y:any}) => {
+  const Column = ({images, y=0, opacity}: {images:any, y:any, opacity: any}) => {
     return(
-      <motion.div style={{y}} className={styles.column}>
+      <motion.div style={{y, opacity}} className={styles.column}
+      initial={{opacity: 0, scale:0.85}}
+      whileInView={{opacity: 1, scale:1}}
+      transition={{duration: 1}}
+      >
         {
           images.map((src:any,index:string) => {
             return <div key={index} className={styles.imageContainer}>
@@ -103,7 +108,8 @@ export default function Middle({page}: {page: any}) {
               src={src}
               fill
               alt='image'
-              className='object-cover'
+              className='object-cover hover:scale-110 transition duration-500'
+              priority={false}
               />
             </div>
           })

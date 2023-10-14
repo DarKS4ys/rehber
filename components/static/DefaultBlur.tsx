@@ -10,6 +10,7 @@ export default function DefaultBlur({src}: {src:any}) {
             fill
             className='object-cover object-bottom'
             placeholder='blur'
+            priority={true}
             />
         </div>
   )

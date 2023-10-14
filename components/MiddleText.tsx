@@ -10,7 +10,7 @@ export default function HeaderText() {
     initial={{ opacity: 0}}
     whileInView={{ opacity: 1}}
     transition={{duration: 1}}
-    className='text-background flex flex-col gap-4 relative drop-shadow-lg items-center bg-neutral-900 rounded-xl px-12 py-8'
+    className='border border-border shadow-xl text-black dark:text-white flex flex-col gap-4 relative items-center bg-white dark:bg-neutral-900 rounded-xl px-12 py-8'
     >
         <h2 className="font-bold text-2xl md:text-4xl">Explore places now!</h2>
         <div className="flex flex-col gap-2 items-center">
