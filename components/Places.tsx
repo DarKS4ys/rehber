@@ -105,7 +105,7 @@ export default function Places({ userLanguage, explore }: { userLanguage: string
 
   return (
     <div className='flex flex-col gap-4'>
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} search={explore.main.search}/>
       <TagFilter tags={getUniqueTags(places)} onTagFilter={handleTagFilter} selectedTags={selectedTags} />
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
       {searchQuery && filteredPlaces.length === 0 ? (

@@ -33,6 +33,8 @@
   },
   "explore": {
     "main": {
+      "title": "Explore",
+      "search": "Search places",
       "notFound": "Not found"
     }
   }

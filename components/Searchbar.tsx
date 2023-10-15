@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 interface SearchBarProps {
   onSearch: (searchQuery: string) => void;
+  search: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, search }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (query: string) => {
@@ -22,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     >
       <input
         type="text"
-        placeholder="Search Places"
+        placeholder={search}
         value={searchQuery}
         onChange={(e) => handleSearch(e.target.value)}
         className="px-4 py-2 rounded-lg border w-full bg-transparent shadow dark:shadow-none focus:border-primary/80 transition duration-200 outline-none"
