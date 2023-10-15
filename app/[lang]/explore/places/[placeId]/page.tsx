@@ -4,7 +4,7 @@ import { db } from '@/lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation'; // Import 'useParams' from 'next/router'
+import { useParams } from 'next/navigation';
 import { useLanguage } from '@/app/[lang]/languageContext';
 
 interface PlaceTypes {
@@ -15,7 +15,7 @@ interface PlaceTypes {
   tags: string[];
 }
 
-export default function PlaceId({userLanguage}: {userLanguage: string}) {
+export default function PlaceId() {
   const router = useRouter();
   const { placeId } = useParams()
 
