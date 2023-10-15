@@ -78,7 +78,7 @@ export default function Header({page}: {page: any}) {
           fill
           placeholder='blur'
           className='object-cover object-bottom'
-          priority={true}
+          loading='lazy'
         />
         <div className="absolute inset-0 z-10 top-[28rem]">
           <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-white"></div>
@@ -115,7 +115,7 @@ export default function Header({page}: {page: any}) {
           fill
           className='object-cover object-bottom'
           placeholder='blur'
-          priority={true}
+          loading='lazy'
         />
         </motion.div>
         <div className="absolute inset-0 z-10 top-[30rem]">

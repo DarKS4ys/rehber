@@ -78,7 +78,7 @@ export default function Middle({page}: {page: any}) {
   return (
     <motion.section className='py-60 relative' style={{opacity: backgroundYFadeOpacityIn}}>
     <main className='relative overflow-hidden'>
-    <div className="absolute z-10 -top-28 w-full h-[40rem]">
+    <div className="absolute z-10 -top-28 w-full h-[40rem] pointer-events-none">
         <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
       </div>
 

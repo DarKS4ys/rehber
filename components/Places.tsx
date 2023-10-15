@@ -7,6 +7,7 @@ import { db } from '@/lib/firebase';
 import SearchBar from './Searchbar';
 import TagFilter from './TagFilter';
 import NotFound from './NotFound';
+import { motion } from 'framer-motion';
 
 interface Place {
   id: string;
@@ -16,11 +17,30 @@ interface Place {
   tags: string[];
 }
 
-export default function Places({ userLanguage }: { userLanguage: string }) {
+export default function Places({ userLanguage, explore }: { userLanguage: string, explore: any }) {
   const [places, setPlaces] = useState<Place[]>([]);
   const [filteredPlaces, setFilteredPlaces] = useState<Place[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  const fadeInAnimationVariants = { // for framer motion  
+    initial: {
+        opacity: 0,
+        scale: 0.7,
+        y: 100,
+    },
+    animate: (index: number) => ({
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+          delay: 0.05 * index,
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }
+    })
+  }
 
   useEffect(() => {
     const placesCollectionRef = collection(db, 'places');
@@ -84,15 +104,30 @@ export default function Places({ userLanguage }: { userLanguage: string }) {
   };
 
   return (
-    <div>
+    <div className='flex flex-col gap-4'>
       <SearchBar onSearch={handleSearch} />
       <TagFilter tags={getUniqueTags(places)} onTagFilter={handleTagFilter} selectedTags={selectedTags} />
-      <div className='flex gap-4 py-4 flex-wrap'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
       {searchQuery && filteredPlaces.length === 0 ? (
-        <NotFound/>
+        <motion.div className="col-span-3"
+        initial={{y:100, opacity:0}}
+        animate={{y:0, opacity: 1}}
+        >
+          <NotFound label={explore.main.notFound} />
+        </motion.div>
         ) : (
-        filteredPlaces.map((place) => (
-          <PlaceCard key={place.name} place={place} />
+        filteredPlaces.map((place, index) => (
+          <motion.div key={place.name}
+          custom={index}
+          variants={fadeInAnimationVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+          >
+            <PlaceCard place={place} />
+          </motion.div>
         ))
       )}
     </div>

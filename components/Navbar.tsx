@@ -29,7 +29,7 @@ export default function Nav({navbar}: {navbar: any}) {
   
 
   return (
-    <header className='w-full sticky top-0 backdrop-blur-md bg-white dark:bg-neutral-950 bg-opacity-70 dark:shadow-none shadow-lg dark:border-border dark:border-b z-50'>
+    <header className='w-full sticky top-0 backdrop-blur-md bg-white dark:bg-background bg-opacity-70 dark:shadow-none shadow-lg dark:border-border dark:border-b z-50'>
       <div className='md:max-w-[1200px] mx-auto'>
         <ul className='flex items-center justify-between px-8 py-4'>
             <Link href={'/'} className='hidden md:flex text-2xl font-semibold tracking-wide text-highlight'>

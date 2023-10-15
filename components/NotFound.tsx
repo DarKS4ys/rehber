@@ -1,9 +1,18 @@
-import { useLanguage } from '@/app/[lang]/languageContext';
+import Image from 'next/image';
 import React from 'react'
+import NotFoundImage from '@/public/notfoundwebp.webp'
 
-export default function NotFound() {
-const { selectedLanguage } = useLanguage(); // Use the hook to get the selected language
+
+export default function NotFound({label}: {label: string}) {
   return (
-    <div>NotFound</div>
+    <div className='text-2xl md:text-3xl w-full items-center justify-center flex flex-col gap-8 my-8'>
+      {label}
+      <Image
+      alt={label}
+      src={NotFoundImage}
+      loading='lazy'
+      className='md:w-96 w-64 drop-shadow-md'
+      />
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface SearchBarProps {
   onSearch: (searchQuery: string) => void;
@@ -15,15 +16,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="mb-4">
+    <motion.div
+    initial={{opacity:0, y:-100}}
+    animate={{opacity:1, y:0}}
+    >
       <input
         type="text"
         placeholder="Search Places"
         value={searchQuery}
         onChange={(e) => handleSearch(e.target.value)}
-        className="px-4 py-2 rounded-lg border w-full"
+        className="px-4 py-2 rounded-lg border w-full bg-transparent shadow dark:shadow-none focus:border-primary/80 transition duration-200 outline-none"
       />
-    </div>
+    </motion.div>
   );
 };
 

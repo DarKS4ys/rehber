@@ -24,5 +24,10 @@
         "description": "description"
       }
     }
+  },
+  "explore": {
+    "main": {
+      "notFound": "Not found"
+    }
   }
 }
