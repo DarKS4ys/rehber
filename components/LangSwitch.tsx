@@ -1,56 +1,49 @@
 "use client"
 import { DropdownMenu } from '@radix-ui/react-dropdown-menu';
-import { useParams, useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Button } from './ui/button';
 import {VscCircleFilled} from 'react-icons/vsc'
 import {BiChevronDown} from 'react-icons/bi'
+import { useLanguage } from '@/app/[lang]/languageContext';
+import clsx from 'clsx';
 
 export default function LangSwitch({navbar}: {navbar:any}) {
     const router = useRouter();
-    let { lang } = useParams();
+    const pathname = usePathname()
+    const { selectedLanguage } = useLanguage();
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Track the dropdown's open state
 
     const [currentLang, setCurrentLang] = useState<string | string[]>("...")
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     
     useEffect(() => {
-        if(lang == "tr") {
+        if(selectedLanguage == "tr") {
           setCurrentLang("Türkçe");
-        } else if (lang == "en") {
+        } else if (selectedLanguage == "en") {
           setCurrentLang("English")
         } else {
           setCurrentLang("?")
         }
-
-        console.log(lang)
-    }, [lang])
+    }, [selectedLanguage])
 
     const changeLang = (newLang: string) => {
-      if (lang != newLang) {
+      if (selectedLanguage != newLang) {
         let lang = newLang
+        const currentRoute = pathname.replace(/^\/[a-zA-Z]{2}/, ''); // Remove the existing language from the pathname
         
-        const newUrl = `/${lang}`
+        const newUrl = `/${lang}${currentRoute}`
         router.push(newUrl)
       }
     }
 
-    const toggleDropdown = () => {
-      setIsDropdownOpen((prevState) => !prevState);
-    };
-
-    const arrowClass = isDropdownOpen ? "rotate-180" : "";
-
-
     return (
-      <DropdownMenu>
+      <DropdownMenu onOpenChange={(isOpen) => setIsDropdownOpen(isOpen)}>
         <DropdownMenuTrigger asChild>
-          <Button
-            className={`bg-highlight hover:bg-highlighthover duration-200 `}
-            onClick={toggleDropdown} // Toggle dropdown state on button click
-          >
+          <Button className='bg-highlight hover:bg-highlighthover duration-200'>
           <p>{currentLang}</p>
-          <BiChevronDown size={20} className=""/>
+          <BiChevronDown size={20} className={clsx('transition-transform', isDropdownOpen ? 'rotate-0' : '-rotate-90')} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

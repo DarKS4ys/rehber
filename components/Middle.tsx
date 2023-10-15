@@ -151,8 +151,6 @@ export default function Middle({page}: {page: any}) {
               className='object-cover hover:scale-110 transition duration-500'
               priority={false}
               sizes="100vw"
-
-              /* placeholder={blurDataUrl} */
               />
             </motion.div>
 
@@ -167,7 +165,6 @@ export default function Middle({page}: {page: any}) {
               className='object-cover hover:scale-110 transition duration-500'
               priority={false}
               sizes="100vw"
-              /* placeholder={blurDataUrl} */
               />
             </motion.div>
             </>

@@ -20,7 +20,6 @@ export default function PlaceId() {
   const { placeId } = useParams()
 
   const { selectedLanguage } = useLanguage(); // Use the hook to get the selected language
-  console.log('user lang is ' + selectedLanguage)
 
   const [place, setPlace] = useState<PlaceTypes | null>(null);
 

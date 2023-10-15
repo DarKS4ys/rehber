@@ -75,7 +75,7 @@ export default function Header({page}: {page: any}) {
           quality={95}
           src={ParallaxBottomImg}
           alt="Background Image"
-          layout="fill"
+          fill
           placeholder='blur'
           className='object-cover object-bottom'
           priority={true}
@@ -84,8 +84,6 @@ export default function Header({page}: {page: any}) {
           <div className="h-full w-full bg-gradient-to-b from-transparent via-transparent to-white"></div>
         </div>
       </motion.div>
-
-
         
       <motion.div
         className='absolute inset-0 z-0 opacity-60 dark:opacity-80 dark:flex hidden'
@@ -96,7 +94,6 @@ export default function Header({page}: {page: any}) {
           opacity: backgroundYFadeOpacity,
         }}
       >
-        {/* Use next/image for background */}
         <DefaultBlur src={ParallaxFullNightImg}/>
         <div className="absolute inset-0 z-10 bottom-[5rem]">
           <div className="h-full w-full bg-gradient-to-b from-neutral-950 via-transparent to-transparent"></div>
@@ -115,7 +112,7 @@ export default function Header({page}: {page: any}) {
           quality={95}
           src={ParallaxBottomNightImg}
           alt="Background Image"
-          layout="fill"
+          fill
           className='object-cover object-bottom'
           placeholder='blur'
           priority={true}
