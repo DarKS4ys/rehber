@@ -16,6 +16,12 @@
       "langswitcher": {
         "turkish": "Türkçe",
         "english": "İngilizce"
+      },
+
+      "options": {
+        "explore": "Keşfet",
+        "contact": "İletişim",
+        "homepage": "Anasayfa"
       }
       },
       "landing": {

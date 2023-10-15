@@ -15,6 +15,12 @@
       "langswitcher": {
         "turkish": "Turkish",
         "english": "English"
+      },
+
+      "options": {
+        "explore": "Explore",
+        "contact": "Contact",
+        "homepage": "Homepage"
       }
     },
     "landing": {

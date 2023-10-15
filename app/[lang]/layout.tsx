@@ -32,7 +32,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         <Providers>
         <LanguageProvider initialLanguage={params.lang}>
-        <Navbar navbar={page.navbar}/>
+        <Navbar navbar={page.navbar} lang={params.lang as string}/>
           {children}
         </LanguageProvider>
         </Providers>
