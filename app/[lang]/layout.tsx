@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Providers from './providers'
 import Navbar from '@/components/Navbar'
 import { getDictionary } from '@/lib/dictionary'
+import { LanguageProvider } from './languageContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,8 +31,10 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <body className={inter.className}>
         <Providers>
+        <LanguageProvider initialLanguage={params.lang}>
         <Navbar navbar={page.navbar}/>
         {children}
+        </LanguageProvider>
         </Providers>
       </body>
     </html>

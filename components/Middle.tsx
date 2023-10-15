@@ -17,7 +17,7 @@ import eight from '../public/images/8.webp'
 import nine from '../public/images/9.jpg'
 import ten from '../public/images/10.jpg'
 import eleven from '../public/images/11.jpg'
-import twelve from '../public/images/12.jpg'
+import twelve from '../public/images/12.webp'
 
 import styles from '@/components/styles/middle.module.css'
 
@@ -35,6 +35,25 @@ const images = [
   eleven,
   twelve,
 ]
+
+const fadeInAnimationVariants = { // for framer motion  
+  initial: {
+      opacity: 0,
+      scale: 0.7,
+      y: 100,
+  },
+  animate: (index: number) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * index,
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }
+  })
+}
 
 export default function Middle({page}: {page: any}) {
 
@@ -58,47 +77,102 @@ export default function Middle({page}: {page: any}) {
 
   return (
     <motion.section className='py-60 relative' style={{opacity: backgroundYFadeOpacityIn}}>
-    <main className='h-[22%] relative overflow-hidden'>
+    <main className='relative overflow-hidden'>
     <div className="absolute z-10 -top-28 w-full h-[40rem]">
         <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
       </div>
-      <div className="justify-center items-center flex flex-col">
+
+      <div className="hidden justify-center items-center md:flex flex-col">
         <motion.div className="absolute z-10 top-0 md:p-0 p-4" style={{ y: textY, opacity: backgroundYFadeOpacity }}>
             <MiddleText explore={page.landing.explore} />
         </motion.div>
       </div>
-      <div className={styles.main}></div>
-      <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
-        <Column images={[images[0], images[1], images[2]]} y={y} opacity={backgroundYFadeOpacity} />
-        <Column images={[images[3], images[4], images[5]]} y={y2} opacity={backgroundYFadeOpacity}/>
-        <Column images={[images[6], images[7], images[8]]} y={y3} opacity={backgroundYFadeOpacity}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4} opacity={backgroundYFadeOpacity}/>
+
+      <div className="flex justify-center items-center md:hidden flex-col">
+        <motion.div className="absolute z-10 top-[23rem] p-4" style={{ opacity: backgroundYFadeOpacity }}>
+          <MiddleText explore={page.landing.explore} />
+        </motion.div>
+      </div>
+      
+      <div className='md:hidden block h-[63rem]'>
+        <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
+          <Column images={[images[0], images[1], images[2], images[6], images[8], images[9]]} opacity={backgroundYFadeOpacity} />
+          <Column images={[images[3], images[4], images[5], images[7], images[10], images[11]]} opacity={backgroundYFadeOpacity}/>
+        </div>
+      </div>
+      <div className='md:block hidden'>
+        <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
+          <Column images={[images[0], images[1], images[2]]} y={y} opacity={backgroundYFadeOpacity} />
+          <Column images={[images[3], images[4], images[5]]} y={y2} opacity={backgroundYFadeOpacity}/>
+          <Column images={[images[6], images[7], images[8]]} y={y3} opacity={backgroundYFadeOpacity}/>
+          <Column images={[images[9], images[10], images[11]]} y={y4} opacity={backgroundYFadeOpacity}/>
+        </div>
       </div>
     </main>
     </motion.section>
   );
   }
 
-  const Column = ({images, y=0, opacity}: {images:any, y:any, opacity: any}) => {
+  const Column = ({images, y=0, opacity}: {images:any, y?:any, opacity: any}) => {
     return(
-      <motion.div style={{y, opacity}} className={styles.column}
+      <motion.div
+      style={{y, opacity}}
+      className={styles.column}
       initial={{opacity: 0, scale:0.85}}
       whileInView={{opacity: 1, scale:1}}
       transition={{duration: 1}}
       >
         {
           images.map((src:any,index:string) => {
-            return <div key={index} className={styles.imageContainer}>
+            return (
+            <>
+            <motion.div 
+            key={index + src} 
+            className={`${styles.imageContainer} md:hidden`}
+            custom={index}
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            whileHover={{
+              scale: 1.05
+            }}
+            whileTap={{
+               scale: 1
+            }}
+            
+            >
               <Image
               src={src}
               fill
               alt='image'
               className='object-cover hover:scale-110 transition duration-500'
               priority={false}
+              sizes="100vw"
+
               /* placeholder={blurDataUrl} */
               />
-            </div>
-          })
+            </motion.div>
+
+            <motion.div 
+            key={index} 
+            className={`${styles.imageContainer} hidden md:flex`}
+            >
+              <Image
+              src={src}
+              fill
+              alt='image'
+              className='object-cover hover:scale-110 transition duration-500'
+              priority={false}
+              sizes="100vw"
+              /* placeholder={blurDataUrl} */
+              />
+            </motion.div>
+            </>
+          )
+        })
         }
       </motion.div>
     )

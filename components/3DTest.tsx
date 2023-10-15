@@ -15,7 +15,7 @@ export default function ThreeDTest() {
   }, []);
 
   return (
-    <div className='w-5/6 h-5/6 md:w-full md:h-full hidden 2xl:flex items-center justify-center'>
+    <div className='w-5/6 h-5/6 md:w-full md:h-full flex items-center justify-center'>
       {isLoaded ? (
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
