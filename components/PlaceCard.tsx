@@ -27,6 +27,7 @@ const pathname = usePathname()
             <li className="bg-accent px-4 py-2 rounded-lg text-xs hover:bg-primary/20 transition duration-200" key={index}>{tag}</li>
           ))}
         </ul>
+        <div className='w-64 h-10 bg-primary rounded-full opacity-0 group-hover:opacity-100 mt-4 dark:blur-[100px] blur-[130px] transition duration-500'/>
       </div>
     </Link>
   )
