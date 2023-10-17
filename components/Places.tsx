@@ -27,7 +27,7 @@ export default function Places({ userLanguage, explore }: { userLanguage: string
     initial: {
         opacity: 0,
         scale: 0.7,
-        y: 100,
+        y: 10,
     },
     animate: (index: number) => ({
         opacity: 1,
