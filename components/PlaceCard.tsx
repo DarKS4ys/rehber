@@ -24,7 +24,7 @@ const pathname = usePathname()
         <h2 className='font-light text-sm'>{place.description}</h2>
         <ul className='flex gap-2 justify-center'>
             {place.tags.map((tag, index) => (
-            <li className="bg-accent px-4 py-2 rounded-lg text-xs" key={index}>{tag}</li>
+            <li className="bg-accent px-4 py-2 rounded-lg text-xs hover:bg-primary/20 transition duration-200" key={index}>{tag}</li>
           ))}
         </ul>
       </div>

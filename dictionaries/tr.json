@@ -33,8 +33,8 @@
       },
       "contact": {
         "title": "İletişime Geç",
-        "descriptionpart1": "Lütfen bizimle direkt olarak burdan:",
-        "descriptionpart2": "veya bu formdan iletişime geçin.",
+        "descriptionpart1": "Lütfen bizimle direkt olarak bu adresten:",
+        "descriptionpart2": "veya aşağıdaki formdan iletişime geçin.",
   
         "inputplaceholder": "Email adresinizi buraya girin...",
         "textareaplaceholder": "Mesajınızı buraya girin...",
@@ -42,17 +42,17 @@
       },
       "footer": {
         "title": "TRABZON REHBERİM",
-        "legal": "2023 © Trabzon Rehberim, All rights reserved.",
+        "legal": "2023 © Trabzon Rehberim, Tüm hakları saklıdır.",
         "navigation": {
-          "title": "Navigation",
+          "title": "Navigasyon",
           "options": {
-            "homepage": "Homepage",
-            "explore": "Explore",
-            "contact": "Contact"
+            "homepage": "Anasayfa",
+            "explore": "Keşfet",
+            "contact": "İletişim"
           }
         },
         "socials": {
-          "title": "Title",
+          "title": "Sosyal Medya",
           "options": {
             "instagram": "Instagram",
             "youtube": "YouTube",
