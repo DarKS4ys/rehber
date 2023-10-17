@@ -45,7 +45,7 @@
       "navigation": {
         "title": "Navigation",
         "options": {
-          "welcome": "Welcome",
+          "homepage": "Homepage",
           "explore": "Explore",
           "contact": "Contact"
         }

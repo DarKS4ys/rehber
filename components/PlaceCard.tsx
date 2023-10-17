@@ -21,7 +21,7 @@ const pathname = usePathname()
       </div>
       <div className="px-4 pt-4 pb-4 gap-2 flex flex-col relative z-10">
         <h1 className="text-3xl font-medium">{place.name}</h1>
-        <h2 className='font-light'>{place.description}</h2>
+        <h2 className='font-light text-sm'>{place.description}</h2>
         <ul className='flex gap-2 justify-center'>
             {place.tags.map((tag, index) => (
             <li className="bg-accent px-4 py-2 rounded-lg text-xs" key={index}>{tag}</li>

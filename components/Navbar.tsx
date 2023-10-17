@@ -13,8 +13,6 @@ export default function Nav({navbar, lang}: {navbar: any, lang:string}) {
   const options = navbar.options;
   const pathnameWithoutLanguage = pathname.replace(/^\/[a-z]{2}\//, '');
 
-  console.log(pathnameWithoutLanguage)
-
   return (
     <header className='w-full sticky top-0 backdrop-blur-md bg-white dark:bg-background bg-opacity-70 dark:shadow-none shadow-lg dark:border-border dark:border-b z-50'>
       <div className='md:max-w-[1200px] mx-auto'>
@@ -27,7 +25,9 @@ export default function Nav({navbar, lang}: {navbar: any, lang:string}) {
           </li>
           <li className="md:flex gap-4 hidden">
           {Object.entries(options).map(([key, value]) => (
-              <Link href={pathnameWithoutLanguage === key ? `/${lang}` : `/${lang}/${key}`} key={key}>
+              <Link 
+              href={pathnameWithoutLanguage === key ? `/${lang}` : key === 'contact' ? `/${lang}/#${key}` : `/${lang}/${key}`}
+              key={key}>
                 <p className='px-3 py-2 hover:bg-highlighthover hover:scale-110 hover:text-white rounded-xl transition duration-200 text-neutral-700 dark:text-neutral-300 dark:hover:text-white'>
                   {typeof value === 'string' ? value : null}
                 </p>

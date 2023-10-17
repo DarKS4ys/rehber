@@ -3,9 +3,12 @@
 import { db } from '@/lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'next/navigation';
 import { useLanguage } from '@/app/[lang]/languageContext';
+import Image from 'next/image';
+import { motion, useMotionValue, useTransform } from 'framer-motion'; // Import Framer Motion
+
 
 interface PlaceTypes {
   id: string;
@@ -60,14 +63,19 @@ export default function PlaceId() {
   }, [placeId, router, selectedLanguage]);
 
   if (!place) {
-    // You can show a loading indicator here while fetching data
     return <div>Loading...</div>;
   }
+  
 
   return (
-    <div>
-      <p>{place.name}</p>
-      <p>{place.description}</p>
-    </div>
+    <section className='flex flex-col items-center w-full h-full'>
+      <div className='h-[20rem] w-full flex relative overflow-hidden group text-center'>
+        <h1 className='text-6xl font-medium z-50 items-center justify-center flex w-full uppercase text-background group-hover:opacity-0 transition duration-500'>{place.name}</h1>
+        <Image priority={true} alt={place.name} src={place.image} fill className='brightness-50 group-hover:brightness-100 object-cover group-hover:scale-125 transition duration-500'/>
+      </div>
+      <div className='flex flex-col items-center p-8'>
+        <p className="text-2xl">{place.description}</p>
+      </div>
+    </section>
   );
 }

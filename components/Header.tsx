@@ -40,7 +40,7 @@ export default function Header({header}: {header: any}) {
   }, [])
   
   return (
-    <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
+    <div id="homepage" ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
       <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: textYFadeOpacity }}>
         <div className='absolute bottom-24 md:bottom-32 2xl:bottom-48 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
           <ThreeDTest />

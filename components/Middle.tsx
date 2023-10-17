@@ -76,7 +76,7 @@ export default function Middle({middle}: {middle: any}) {
   const textY = useTransform(scrollYProgress, [0, 1], [0, height * 1.65]);
 
   return (
-    <motion.section className='pt-28 pb-24 md:pt-40 2xl:pt-48 relative' style={{opacity: backgroundYFadeOpacityIn}}>
+    <motion.section id="explore" className='pt-28 pb-24 md:pt-40 2xl:pt-48 relative' style={{opacity: backgroundYFadeOpacityIn}}>
     <main className='relative overflow-hidden'>
     <div className="absolute z-10 -top-28 w-full h-[40rem] pointer-events-none">
         <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>

@@ -23,8 +23,9 @@ export const sendEmail = async (formData: FormData) => {
         }
     }
 
+    let data
     try {
-        await resend.emails.send({
+        data = await resend.emails.send({
             from: 'Trabzon Rehberim <onboarding@resend.dev>',
             to: 'melihyardim1057@gmail.com',
             subject: 'Message from Trabzon Rehberim',
@@ -33,11 +34,15 @@ export const sendEmail = async (formData: FormData) => {
                 message: message as string,
                 senderEmail: senderEmail as string
             })
-            //text: message as string,
         })
+        
     } catch (error: unknown) {
         return {
             error: extractErrorMessage(error)
         }
+    }
+
+    return {
+        data
     }
   }

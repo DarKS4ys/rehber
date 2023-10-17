@@ -46,7 +46,7 @@
         "navigation": {
           "title": "Navigation",
           "options": {
-            "welcome": "Welcome",
+            "homepage": "Homepage",
             "explore": "Explore",
             "contact": "Contact"
           }
@@ -54,7 +54,7 @@
         "socials": {
           "title": "Title",
           "options": {
-            "bok": "Instagram",
+            "instagram": "Instagram",
             "youtube": "YouTube",
             "tiktok": "TikTok"
           }
