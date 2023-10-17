@@ -26,10 +26,10 @@ export default function Nav({navbar, lang}: {navbar: any, lang:string}) {
             <MobileSheet navbar={navbar} lang={lang} pathnameWithoutLanguage={pathnameWithoutLanguage}/>
           </li>
           <li className="md:flex gap-4 hidden">
-          {Object.keys(options).map((key) => (
-              <Link href={pathnameWithoutLanguage === key ? `/${lang}` : `/${lang}/${key}`} key={options[key]}>
+          {Object.entries(options).map(([key, value]) => (
+              <Link href={pathnameWithoutLanguage === key ? `/${lang}` : `/${lang}/${key}`} key={key}>
                 <p className='px-3 py-2 hover:bg-highlighthover hover:scale-110 hover:text-white rounded-xl transition duration-200 text-neutral-700 dark:text-neutral-300 dark:hover:text-white'>
-                  {options[key]}
+                  {typeof value === 'string' ? value : null}
                 </p>
               </Link>
             ))}

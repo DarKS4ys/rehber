@@ -38,6 +38,26 @@
       "inputplaceholder": "Type your email adress...",
       "textareaplaceholder": "Type your message here...",
       "buttonLabel": "Submit"
+    },
+    "footer": {
+      "title": "TRABZON REHBERIM",
+      "legal": "2023 © Trabzon Rehberim, All rights reserved.",
+      "navigation": {
+        "title": "Navigation",
+        "options": {
+          "welcome": "Welcome",
+          "explore": "Explore",
+          "contact": "Contact"
+        }
+      },
+      "socials": {
+        "title": "Socials",
+        "options": {
+          "instagram": "Instagram",
+          "youtube": "YouTube",
+          "tiktok": "TikTok"
+        }
+      }
     }
   },
   "explore": {

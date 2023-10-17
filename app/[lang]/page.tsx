@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Middle from '@/components/Middle'
 import { Locale } from '@/i18n.config'
@@ -15,9 +16,9 @@ export default async function Home({
   return (
     <main>
       <Header header={page.header}/>
-      
       <Middle middle={page.middle}/>
       <Contact contact={page.contact}/>
+      <Footer footer={page.footer}/>
     </main>
   )
 }

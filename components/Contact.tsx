@@ -9,7 +9,7 @@ export default function Contact({contact}: {contact: any}) {
     <motion.section
     initial={{ opacity: 0, y:100}}
     whileInView={{opacity:1, y:0}}
-    transition={{duration: 1.2}}
+    transition={{duration: 1}}
     >
       <ContactInner contact={contact}/>
     </motion.section>

@@ -5,10 +5,10 @@ import {FaPaperPlane} from 'react-icons/fa'
 export default function ContactInner({contact}: {contact: any}) {
 
   return (
-    <section className="w-full items-center justify-center flex flex-col p-4">
+    <section className="w-full items-center justify-center flex flex-col px-4 pb-28 2xl:pt-12 py-8">
         <div className='w-[min(100%,38rem)] flex flex-col text-center gap-4'>
         <h1 className='text-3xl md:text-4xl font-semibold'>{contact.title}</h1>
-        <p className='text-neutral-700 dark:text-neutral-500'>
+        <p className='text-neutral-700 dark:text-neutral-400'>
         {contact.descriptionpart1}{" "}
           <a className='underline' href='mailto:melihyardim1057@gmail.com'>
             melihyardim1057@gmail.com
