@@ -28,7 +28,7 @@ export default function Nav({navbar, lang}: {navbar: any, lang:string}) {
               <Link 
               href={pathnameWithoutLanguage === key ? `/${lang}` : key === 'contact' ? `/${lang}/#${key}` : `/${lang}/${key}`}
               key={key}>
-                <p className='px-3 py-2 hover:bg-highlighthover hover:scale-110 hover:text-white rounded-xl transition duration-200 text-neutral-700 dark:text-neutral-300 dark:hover:text-white'>
+                <p className='px-3 py-2 hover:bg-highlighthover hover:scale-110 active:scale-95 hover:text-white rounded-xl transition duration-200 text-neutral-700 dark:text-neutral-300 dark:hover:text-white'>
                   {typeof value === 'string' ? value : null}
                 </p>
               </Link>
