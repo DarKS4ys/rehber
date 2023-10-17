@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact'
 import Header from '@/components/Header'
 import Middle from '@/components/Middle'
 import { Locale } from '@/i18n.config'
@@ -12,11 +13,11 @@ export default async function Home({
   const { page } = await getDictionary(lang)
 
   return (
-    <main className='h-[400rem]'>
-      <Header page={page}/>
+    <main>
+      <Header header={page.header}/>
       
-      <Middle page={page}/>
-      {/* <ThreeDTest/> */}
+      <Middle middle={page.middle}/>
+      <Contact contact={page.contact}/>
     </main>
   )
 }

@@ -55,7 +55,7 @@ const fadeInAnimationVariants = { // for framer motion
   })
 }
 
-export default function Middle({page}: {page: any}) {
+export default function Middle({middle}: {middle: any}) {
 
   const ref = useRef(null);
 
@@ -71,12 +71,12 @@ export default function Middle({page}: {page: any}) {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.9])
   
-  const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.85, 1], ["100%", "0%"]);
+  const backgroundYFadeOpacity = useTransform(scrollYProgress, [0.85, 0.95], ["100%", "0%"]);
   const backgroundYFadeOpacityIn = useTransform(scrollYProgress, [0, 0.15], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, height * 1.65]);
 
   return (
-    <motion.section className='py-60 relative' style={{opacity: backgroundYFadeOpacityIn}}>
+    <motion.section className='pt-28 pb-20  md:pt-40 2xl:pt-48 relative' style={{opacity: backgroundYFadeOpacityIn}}>
     <main className='relative overflow-hidden'>
     <div className="absolute z-10 -top-28 w-full h-[40rem] pointer-events-none">
         <div className="h-full w-full bg-gradient-to-b from-background via-transparent to-transparent"></div>
@@ -84,17 +84,17 @@ export default function Middle({page}: {page: any}) {
 
       <div className="hidden justify-center items-center md:flex flex-col">
         <motion.div className="absolute z-10 top-0 md:p-0 p-4" style={{ y: textY, opacity: backgroundYFadeOpacity }}>
-            <MiddleText explore={page.landing.explore} />
+            <MiddleText explore={middle.explore} />
         </motion.div>
       </div>
 
       <div className="flex justify-center items-center md:hidden flex-col">
         <motion.div className="absolute z-10 top-[23rem] p-4" style={{ opacity: backgroundYFadeOpacity }}>
-          <MiddleText explore={page.landing.explore} />
+          <MiddleText explore={middle.explore} />
         </motion.div>
       </div>
       
-      <div className='md:hidden block h-[63rem]'>
+      <div className='md:hidden block h-[60rem]'>
         <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
           <Column images={[images[0], images[1], images[2], images[6], images[8], images[9]]} opacity={backgroundYFadeOpacity} />
           <Column images={[images[3], images[4], images[5], images[7], images[10], images[11]]} opacity={backgroundYFadeOpacity}/>

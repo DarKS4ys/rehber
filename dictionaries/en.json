@@ -23,12 +23,21 @@
         "homepage": "Homepage"
       }
     },
-    "landing": {
+    "middle": {
       "explore": {
         "title": "Explore places now!",
         "buttonLabel": "Explore",
         "description": "description"
       }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "descriptionpart1": "Please contact us directly at",
+      "descriptionpart2": "or through this form",
+
+      "inputplaceholder": "Type your email adress...",
+      "textareaplaceholder": "Type your message here...",
+      "buttonLabel": "Submit"
     }
   },
   "explore": {

@@ -28,7 +28,7 @@ export default function Nav({navbar, lang}: {navbar: any, lang:string}) {
           <li className="md:flex gap-4 hidden">
           {Object.keys(options).map((key) => (
               <Link href={pathnameWithoutLanguage === key ? `/${lang}` : `/${lang}/${key}`} key={options[key]}>
-                <p className='px-3 py-2 hover:bg-highlighthover rounded-xl transition duration-200 hover:text-zinc-200 dark:hover:text-zinc-100'>
+                <p className='px-3 py-2 hover:bg-highlighthover hover:scale-110 hover:text-white rounded-xl transition duration-200 text-neutral-700 dark:text-neutral-300 dark:hover:text-white'>
                   {options[key]}
                 </p>
               </Link>

@@ -12,7 +12,7 @@ import ParallaxBottomImg from '../public/parallax-bottom.webp'
 import ParallaxBottomNightImg from '../public/parallax-bottom-night.webp'
 import DefaultBlur from './static/DefaultBlur'
 
-export default function Header({page}: {page: any}) {
+export default function Header({header}: {header: any}) {
   const ref = useRef(null);
   const {scrollYProgress} = useScroll({
     target: ref,
@@ -42,10 +42,10 @@ export default function Header({page}: {page: any}) {
   return (
     <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
       <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: textYFadeOpacity }}>
-        <div className='absolute bottom-24 md:bottom-36 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
+        <div className='absolute bottom-24 md:bottom-32 2xl:bottom-48 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
           <ThreeDTest />
         </div>
-        <HeaderText page={page} />
+        <HeaderText header={header} />
       </motion.div>
 
         <motion.div
@@ -125,38 +125,3 @@ export default function Header({page}: {page: any}) {
     </div>
   );
 }
-
-
-
-/* return (
-  <div ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-32 md:py-18 2xl:py-40 text-lg relative text-center p-4'>
-      
-    <motion.div className='z-20 relative'
-    style={{y: textY}}
-    >
-      <div className='absolute bottom-24 md:bottom-36 right-4 w-full h-full justify-center flex z-10 drop-shadow-lg'>
-        <ThreeDTest/>
-      </div>
-      <HeaderText page={page}/>
-    </motion.div>
-
-    <motion.div
-    className='absolute inset-0 z-0 opacity-60 dark:opacity-80 dark:hidden'
-    style={{
-      backgroundImage: `url(/parallaxfull.jpg)`,
-      backgroundPosition: "bottom",
-      backgroundSize: "cover",
-      y: backgroundY
-    }}
-    />
-    <div
-    className='absolute inset-0 z-30 dark:hidden'
-    style={{
-      backgroundImage: `url(/parallax-bottom.png)`,
-      backgroundPosition: "bottom",
-      backgroundSize: "cover"
-    }}
-    />
-  </div>
-)
-} */

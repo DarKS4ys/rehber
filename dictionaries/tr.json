@@ -24,12 +24,21 @@
         "homepage": "Anasayfa"
       }
       },
-      "landing": {
+      "middle": {
         "explore": {
           "title": "Keşfetmeye hemen başla!",
           "buttonLabel": "Keşfet",
           "description": "açıklama"
         }
+      },
+      "contact": {
+        "title": "İletişime Geç",
+        "descriptionpart1": "Lütfen bizimle direkt olarak burdan:",
+        "descriptionpart2": "veya bu formdan iletişime geçin.",
+  
+        "inputplaceholder": "Email adresinizi buraya girin...",
+        "textareaplaceholder": "Mesajınızı buraya girin...",
+        "buttonLabel": "Gönder"
       }
     },
     "explore": {
