@@ -25,7 +25,7 @@ export default function Footer({footer}: {footer:any}) {
   }
 
   return (
-    <motion.section className='p-12 h-52 flex justify-center items-center border-t border-border'
+    <motion.section className='p-6 py-8 md:p-12 h-52 flex justify-center items-center border-t border-border'
     initial={{y: 75}}
     whileInView={{y: 0}}
     >
@@ -35,12 +35,11 @@ export default function Footer({footer}: {footer:any}) {
         initial="initial"
         whileInView="animate"
         >
-            <h1 className='tracking-wide text-3xl font-semibold'>
-              {footer.title}
+            <h1 className='tracking-wide text-xl md:text-3xl font-semibold flex flex-col gap-4'>
+              <p>{footer.title}</p>
+
+              <p className='text-xs md:text-sm font-light text-muted-foreground'>{footer.legal}</p>
             </h1>
-            <h2 className='text-sm font-light text-muted-foreground'>
-              {footer.legal}
-            </h2>
         </motion.div>
         <FooterList footer={footer}/>
       </div>
