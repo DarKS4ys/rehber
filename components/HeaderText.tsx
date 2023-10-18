@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import {motion} from 'framer-motion'
-import ThreeDTest from './3DTest'
 
 export default function HeaderText({ header }: { header: any }) {
   return (
