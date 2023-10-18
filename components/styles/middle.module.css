@@ -52,7 +52,7 @@
     position: relative;
     height: 100%;
     width: 50%;
-    min-width: 175px;
+    min-width: 170px;
     display: flex;
     flex-direction: column;
     gap: 2vw;

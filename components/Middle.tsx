@@ -94,7 +94,7 @@ export default function Middle({middle}: {middle: any}) {
         </motion.div>
       </div>
       
-      <div className='md:hidden block h-[61.5rem]'>
+      <div className='md:hidden block h-[62.5rem]'>
         <div ref={ref} className={styles.gallery} style={{ zIndex:0}}>
           <Column images={[images[0], images[1], images[2], images[6], images[8], images[9]]} opacity={backgroundYFadeOpacity} />
           <Column images={[images[3], images[4], images[5], images[7], images[10], images[11]]} opacity={backgroundYFadeOpacity}/>
