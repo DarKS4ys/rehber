@@ -154,13 +154,9 @@ export default function Middle({middle}: {middle: any}) {
               />
             </motion.div>
 
-            <motion.div 
-            key={index + src} 
+            <div 
+            key={index} 
             className={`${styles.imageContainer} hidden md:flex`}
-            custom={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
             >
               <Image
               src={src}
@@ -170,7 +166,7 @@ export default function Middle({middle}: {middle: any}) {
               priority={false}
               sizes="100vw"
               />
-            </motion.div>
+            </div>
             </>
           )
         })

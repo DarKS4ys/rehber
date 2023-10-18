@@ -34,6 +34,9 @@ export default function Footer({footer}: {footer:any}) {
         variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
+        viewport={{
+          once: true,
+        }}
         >
             <h1 className='tracking-wide text-xl md:text-3xl font-semibold flex flex-col gap-4'>
               <p>{footer.title}</p>
