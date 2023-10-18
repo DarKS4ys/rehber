@@ -44,7 +44,7 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagFilter, selectedTags }
             <button
               onClick={() => onTagFilter(tag)}
               className={clsx('shadow hover:scale-110 active:scale-95 dark:shadow-none px-4 py-2 mr-2 rounded-lg text-sm border border-border bg-background hover:bg-border transition duration-300', {
-                'bg-primary text-background hover:bg-black dark:hover:bg-white border-primary': selectedTags.includes(tag),
+                'bg-primary text-background hover:bg-primary/30 hover:text-black dark:hover:bg-white/80 border-primary': selectedTags.includes(tag),
               })}
             >
               {tag}
