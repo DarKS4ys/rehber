@@ -21,6 +21,7 @@ interface PlaceTypes {
     id: string;
     header: string;
     middle: string;
+    last: string
   }
   
   interface MediaTypes {
@@ -91,7 +92,8 @@ export default function Content({placeLocal}: {placeLocal: any}) {
     
                   const content = {
                     header: contentData.header,
-                    middle: contentData.middle
+                    middle: contentData.middle,
+                    last: contentData.last
                     // add more
                   }
     
@@ -165,6 +167,19 @@ export default function Content({placeLocal}: {placeLocal: any}) {
           <Image alt='Image' fill src={media?.firstImg} className="object-cover rounded-lg group-hover:scale-105 transition duration-200"/>
         </motion.div>
         : null}
+
+        {content ? 
+          <p className='md:text-lg'>{content.last}</p>
+          : <p>Loading...</p>
+        }
+
+        <h1 className='text-3xl font-semibold my-8'>Go there now!</h1>
+
+        <iframe
+        className='rounded-lg w-full h-[16rem] md:w-[44rem] md:h-[26rem]'
+        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1505.4478333256036!2d39.730222692845594!3d41.00565674770153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643c4467d413c3%3A0xe0d8e39ac277ba48!2sTrabzon%20Square%20Park!5e0!3m2!1sen!2str!4v1697826063681!5m2!1sen!2str'
+        loading="lazy"
+        ></iframe>
 
       </div>
     </section>
