@@ -8,6 +8,8 @@ import { Toaster, toast } from 'sonner';
 import { motion } from 'framer-motion';
 import Carousel from './Carousel';
 import Image from 'next/image';
+import { FiLoader } from 'react-icons/fi';
+import Loading, { LoadingImage, LoadingText } from './Loading';
 
 interface PlaceTypes {
     id: string;
@@ -178,7 +180,7 @@ export default function Content({placeLocal}: {placeLocal: any}) {
       }, [placeId, router, selectedLanguage, placeLocal.error, placeLocal.activityError]);
     
       if (!place) {
-        return <div className="w-full h-screen flex items-center justify-center">Loading...</div>;
+        return <div className="w-full h-screen flex items-center justify-center text-2xl"><FiLoader size={64} className="animate-spin"/></div>;
       }
 
   return (
@@ -206,12 +208,12 @@ export default function Content({placeLocal}: {placeLocal: any}) {
               </motion.div>
             ))}
           </ul>
-      ) : <p>Loading activities...</p>}
+      ) : <Loading/>}
       </div>
 
         {content ? 
           <p className='md:text-lg'>{content.header}</p>
-          : <p>Loading...</p>
+          : <LoadingText/>
         }
 
         {media?.carouselMedia ? (
@@ -222,11 +224,11 @@ export default function Content({placeLocal}: {placeLocal: any}) {
         className='w-full flex items-center justify-center'        >
           <Carousel images={media.carouselMedia} />
         </motion.div>
-        ) : null}
+        ) : <LoadingImage/>}
 
         {content ? 
           <p className='md:text-lg'>{content.middle}</p>
-          : <p>Loading...</p>
+          : <LoadingText/>
         }
 
         {media ? 
@@ -237,11 +239,11 @@ export default function Content({placeLocal}: {placeLocal: any}) {
         >
           <Image alt='Image' fill src={media?.firstImg} className="object-cover rounded-lg group-hover:scale-105 transition duration-200"/>
         </motion.div>
-        : null}
+        : <LoadingImage/>}
 
         {content ? 
           <p className='md:text-lg'>{content.last}</p>
-          : <p>Loading...</p>
+          : <LoadingText/>
         }
 
         <h1 className='text-3xl font-semibold my-8'>{placeLocal.go}</h1>
@@ -258,7 +260,8 @@ export default function Content({placeLocal}: {placeLocal: any}) {
           loading="lazy"
           ></iframe>
         </motion.div>
-        : null}
+        : <LoadingImage/>
+        }
 
       </div>
     </section>
