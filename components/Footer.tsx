@@ -38,7 +38,7 @@ export default function Footer({footer}: {footer:any}) {
           once: true,
         }}
         >
-            <h1 className='tracking-wide text-xl md:text-3xl font-semibold flex flex-col gap-4'>
+            <h1 className='tracking-wide md:text-3xl font-semibold flex flex-col gap-4'>
               <p>{footer.title}</p>
 
               <p className='text-xs md:text-sm font-light text-muted-foreground'>{footer.legal}</p>

@@ -90,7 +90,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`w-4 h-4 rounded-full bg-white cursor-pointer transition duration-200 border border-white hover:bg-neutral-300 dark:hover:border-neutral-900 shadow-md ${selectedDot === index ? ' scale-125 dark:border-neutral-900 dark:!bg-neutral-800 !border-neutral-200 !bg-neutral-400 hover:bg-neutral-400' : ''}`}
+            className={`w-4 h-4 rounded-full bg-white/80 cursor-pointer transition duration-200 border border-white hover:bg-neutral-300 dark:hover:border-neutral-900 shadow-md ${selectedDot === index ? ' scale-125 dark:border-neutral-900 dark:!bg-neutral-800 !border-neutral-200 !bg-neutral-400 hover:bg-neutral-400' : ''}`}
             onClick={() => handleDotClick(index)}
           />
         ))}
