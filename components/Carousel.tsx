@@ -74,13 +74,13 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       ))}
 
       <button
-        className="hover:scale-110 active:scale-100 absolute top-1/2 -mt-4 left-4 text-2xl text-white bg-black/60 hover:bg-black transition duration-150 p-2 rounded-full"
+        className="hover:scale-110 active:scale-100 absolute top-1/2 -mt-4 left-4 text-2xl hover:bg-white text-black bg-white/60 dark:text-white dark:bg-black/60 dark:hover:bg-black transition duration-150 p-2 rounded-full"
         onClick={slideToPrevImage}
       >
         <ChevronLeft />
       </button>
       <button
-        className="hover:scale-110 active:scale-100 absolute top-1/2 -mt-4 right-4 text-2xl text-white bg-black/60 hover:bg-black transition duration-150 p-2 rounded-full"
+        className="hover:scale-110 active:scale-100 absolute top-1/2 -mt-4 right-4 text-2xl hover:bg-white text-black bg-white/60 dark:text-white dark:bg-black/60 dark:hover:bg-black transition duration-150 p-2 rounded-full"
         onClick={slideToNextImage}
       >
         <ChevronRight />
