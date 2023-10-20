@@ -70,7 +70,8 @@
     }
   },
   "place": {
-    
-    "error": "An error occured while fetching content"
+    "go": "Go there now",
+    "error": "An error occured while fetching content",
+    "activityError": "Error occured while fetching activities"
   }
 }

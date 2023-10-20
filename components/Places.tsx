@@ -123,7 +123,7 @@ export default function Places({ userLanguage, explore }: { userLanguage: string
           initial="initial"
           whileInView="animate"
           viewport={{
-            once: true,
+            once: true
           }}
           >
             <PlaceCard place={place} />

@@ -71,8 +71,9 @@
       }
     },
     "place": {
-    
-      "error": "Yer hakkında bilgi toplanırken hata meydana geldi..."
+      "go": "Hemen buraya git",
+      "error": "Yer hakkında bilgi toplanırken hata meydana geldi...",
+      "activityError": "Aktivite verileri toplanırken hata meydana geldi..."
     }
   }
   
