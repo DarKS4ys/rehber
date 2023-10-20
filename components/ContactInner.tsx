@@ -26,7 +26,7 @@ export default function ContactInner({contact}: {contact: any}) {
             return;
           }
 
-          toast.success('Email sent successfully!')
+          toast.success(`${contact.succesfullySent}`)
         }}
         >
           <Toaster />

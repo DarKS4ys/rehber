@@ -37,7 +37,9 @@
 
       "inputplaceholder": "Type your email adress...",
       "textareaplaceholder": "Type your message here...",
-      "buttonLabel": "Submit"
+      "buttonLabel": "Submit",
+
+      "succesfullySent": "Email sent successfully!"
     },
     "footer": {
       "title": "TRABZON REHBERIM",
@@ -66,5 +68,9 @@
       "search": "Search places",
       "notFound": "Not found"
     }
+  },
+  "place": {
+    
+    "error": "An error occured while fetching content"
   }
 }
