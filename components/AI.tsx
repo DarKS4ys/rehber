@@ -72,8 +72,8 @@ export default function AI() {
             </div>
             : 
             <div className={`${
-              apiResponse ? "bg-background border border-border w-full items-center justify-center flex" : "hidden"
-              } rounded-xl py-3 px-4 w-[40%] h-full`}>
+              apiResponse ? "bg-background border border-border w-full flex" : "hidden"
+              } rounded-xl py-3 px-4 w-[50%] h-40 overflow-y-scroll`}>
                 <h1>{apiResponse}</h1>
             </div>
             }
