@@ -2,11 +2,11 @@
 import clsx from 'clsx';
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { useRouter } from 'next/navigation';
 interface TagFilterProps {
   tags: string[];
   onTagFilter: (tag: string) => void;
-  selectedTags: string[]; // Change the type to an array of strings
+  selectedTags: string[];
 }
 
 const TagFilter: React.FC<TagFilterProps> = ({ tags, onTagFilter, selectedTags }) => {

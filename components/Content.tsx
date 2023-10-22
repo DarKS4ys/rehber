@@ -10,6 +10,7 @@ import Carousel from './Carousel';
 import Image from 'next/image';
 import { FiLoader } from 'react-icons/fi';
 import Loading, { LoadingImage, LoadingText } from './Loading';
+import { clsx } from 'clsx';
 
 interface PlaceTypes {
     id: string;
