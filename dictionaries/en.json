@@ -60,6 +60,19 @@
           "tiktok": "TikTok"
         }
       }
+    },
+    "marqueeLocal": {
+      "title": "Discover Trabzon",
+
+      "marquee": {
+        "shopping": "Shopping",
+        "history": "History",
+        "entertainment": "Entertainment",
+        "beaches": "Beaches",
+        "foodanddrink": "Food & Drink",
+        "art": "Art",
+        "nature": "Nature"
+      }
     }
   },
   "explore": {

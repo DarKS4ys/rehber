@@ -17,7 +17,7 @@ export default async function Home({
   return (
     <main>
       <Header header={page.header}/>
-      <MarqueeComponent/>
+      <MarqueeComponent marqueeLocal={page.marqueeLocal}/>
       <Middle middle={page.middle}/>
       <Contact contact={page.contact}/>
       <Footer footer={page.footer}/>

@@ -61,6 +61,19 @@
             "tiktok": "TikTok"
           }
         }
+      },
+      "marqueeLocal": {
+        "title": "Trabzonu Keşfet",
+
+        "marquee": {
+          "shopping": "Alışveriş",
+          "history": "Tarih",
+          "entertainment": "Eğlence",
+          "beaches": "Sahiller",
+          "foodanddrink": "Yiyecek & İçecek",
+          "art": "Sanat",
+          "nature": "Doğa"
+        }
       }
     },
     "explore": {
