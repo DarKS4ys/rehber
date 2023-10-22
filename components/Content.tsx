@@ -189,7 +189,9 @@ export default function Content({placeLocal}: {placeLocal: any}) {
       <Toaster />
       <div className='h-[20rem] w-full flex relative overflow-hidden group text-center'>
         <h1 className='text-6xl font-semibold z-20 items-center justify-center flex w-full uppercase text-white group-hover:opacity-0 transition duration-500'>{place.name}</h1>
+        {place.image ? 
         <Image priority={true} alt={place.name} src={place.image} fill className='brightness-50 group-hover:brightness-100 object-cover group-hover:scale-105 transition duration-500'/>
+        : <div className="bg-black/5 w-full h-full animate-pulse"/>}
       </div>
       <div className='flex flex-col items-center p-8 py-4 gap-6 max-w-[1200px] rounded-lg'>      
       

@@ -12,49 +12,49 @@ export default function MarqueeComponent({marqueeLocal}: {marqueeLocal: any}) {
       title: marqueeLocal.marquee.shopping,
       icon: <AiOutlineShopping size={24} />,
       color: 'bg-red-500',
-      border: 'border-red-500',
+      border: 'border-red-500 dark:border-red-500/50',
       'text': 'text-red-600'
     },
     {
       title: marqueeLocal.marquee.history,
       icon: <AiOutlineBank size={24} />,
       color: 'bg-emerald-500',
-      border: 'border-emerald-500',
+      border: 'border-emerald-500 dark:border-emerald-500/50',
       text: 'text-emerald-600'
     },
     {
       title: marqueeLocal.marquee.entertainment,
       icon: <HiOutlineTicket size={24} />,
       color: 'bg-violet-500',
-      border: 'border-violet-500',
+      border: 'border-violet-500 dark:border-violet-500/50',
       text: 'text-violet-600'
     },
     {
       title: marqueeLocal.marquee.beaches,
       icon: <TbBeach size={24} />,
       color: 'bg-yellow-500',
-      border: 'border-yellow-500',
+      border: 'border-yellow-500 dark:border-yellow-500/50',
       text: 'text-yellow-600'
     },
     {
       title: marqueeLocal.marquee.foodanddrink,
       icon: <MdOutlineFastfood size={24} />,
       color: 'bg-orange-500',
-      border: 'border-orange-500',
+      border: 'border-orange-500 dark:border-orange-500/50',
       text: 'text-orange-600'
     },
     {
       title: marqueeLocal.marquee.art,
       icon: <HiOutlineSparkles size={24} />,
       color: 'bg-pink-500',
-      border: 'border-pink-500',
+      border: 'border-pink-500 dark:border-pink-500/50',
       text: 'text-pink-600'
     },
     {
       title: marqueeLocal.marquee.nature,
       icon: <MdOutlineForest size={24} />,
       color: 'bg-green-500',
-      border: 'border-green-500',
+      border: 'border-green-500 dark:border-green-500/50',
       text: 'text-green-600'
     },
   ];
