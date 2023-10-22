@@ -10,6 +10,7 @@ import ParallaxFullNightImg from '../public/parallaxfull-night.jpg'
 import ParallaxBottomImg from '../public/parallax-bottom.webp'
 import ParallaxBottomNightImg from '../public/parallax-bottom-night.webp'
 import DefaultBlur from './static/DefaultBlur'
+import AI from './AI'
 
 export default function Header({header}: {header: any}) {
   const ref = useRef(null);
@@ -41,7 +42,7 @@ export default function Header({header}: {header: any}) {
   return (
     <div id="homepage" ref={ref} className='overflow-hidden h-screen w-full items-center flex flex-col py-[24vh] md:py-[12vh] 2xl:py-40 text-lg relative text-center p-4'>
       <motion.div className='z-20 relative' style={{ y: textY, scale: scaleTransform, opacity: textYFadeOpacity }}>
-{/*         <div className='absolute bottom-24 md:bottom-32 2xl:bottom-48 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
+        {/*<div className='absolute bottom-24 md:bottom-32 2xl:bottom-48 right-5 w-full h-full justify-center flex z-10 drop-shadow-lg'>
           <ThreeDTest />
         </div> */}
         <HeaderText header={header} />
@@ -69,6 +70,9 @@ export default function Header({header}: {header: any}) {
         opacity: backgroundYFadeOpacity,
       }}
       >
+        <div className='justify-center flex items-center absolute inset-0 top-[50%] z-50'>
+          <AI/>
+        </div>
         {/* Use next/image for background */}
         <Image
           quality={95}
